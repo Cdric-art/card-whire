@@ -1,3 +1,7 @@
+.App {
+    color: var(--textColor);
+}
+
 .Header {
     width: 100%;
     height: 10vh;
