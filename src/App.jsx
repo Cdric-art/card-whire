@@ -1,33 +1,26 @@
-import React, { useEffect, useRef, useState } from 'react'
-import './styles/App.css'
+import React from 'react'
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route, Link,
+} from "react-router-dom";
+import CreatedCard from "./components/pages/CreatedCard";
+import Home from "./components/pages/Home";
 
 function App() {
-
-    const [img, setImg] = useState('src/assets/icons/profile.png')
-
     return (
         <div className="App">
-            <div className="Header">
-                <img src="src/assets/images/Logo-whire.svg" alt="Logo Whire"/>
-            </div>
-            <main className="container">
-                <div className="card">
-                    <img className="img-model" src="src/assets/images/modele.png" alt="Modele"/>
-                    <div className="wrapper-card">
-                        <div className="header-card">
-                            <img className="photo-profil" src={img} alt=""/>
-                            <div className="title-card">
-
-                            </div>
-                            <img className="logo" src="src/assets/images/Logo-whire.svg" alt="logo"/>
-                        </div>
-                    </div>
+            <Router>
+                <div className="header">
+                    <Link to="/">
+                        <img src="src/assets/images/whireLetter.png" alt="Logo Whire"/>
+                    </Link>
                 </div>
-
-                <div className="dashboard">
-                    <input type="file" onChange={(e) => setImg(URL.createObjectURL(e.target.files[0]))}/>
-                </div>
-            </main>
+                <Switch>
+                    <Route exact path="/" component={Home}/>
+                    <Route exact path="/card" component={CreatedCard}/>
+                </Switch>
+            </Router>
         </div>
     )
 }
