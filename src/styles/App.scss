@@ -24,6 +24,10 @@ body {
   color: $textColor;
 }
 
+.emoji {
+  font-size: 2rem;
+}
+
 // Pages
 // ===============
 @import 'pages/home';
