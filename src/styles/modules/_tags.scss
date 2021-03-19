@@ -1,0 +1,28 @@
+.tags-list {
+  text-align: center;
+
+  li {
+    display: inline-block;
+    font-size: 1.05rem;
+    font-weight: 600;
+    border: 2px solid transparent;
+    border-radius: 25px;
+    padding: 10px 35px;
+    margin: 5px;
+    background-color: transparent;
+    transition: all .3s;
+  }
+
+  li.yellow {
+    background-color: #fff4e2;
+    border: 2px solid #fff1d8;
+  }
+  li.green {
+    background-color: #ebffe2;
+    border: 2px solid #d8ffdd;
+  }
+}
+
+.icon-tag img {
+  height: 50px;
+}

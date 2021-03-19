@@ -1,0 +1,62 @@
+.dashboard {
+
+  .input-file {
+    text-align: center;
+    margin-top: 12px;
+    padding-bottom: 20px;
+    width: 100%;
+    border-bottom: 1px solid $colorPurple;
+
+    label {
+      font-size: 1.1rem;
+      color: $colorPurple;
+      font-weight: 500;
+    }
+
+    input {
+      margin-top: 12px;
+      padding: 4px 8px;
+    }
+  }
+
+  .input-title {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    justify-items: center;
+    align-items: center;
+    padding: 20px 0;
+    margin-bottom: 20px;
+    height: 210px;
+    border-bottom: 1px solid $colorPurple;
+
+    input {
+      width: 90%;
+      padding: 6px 0;
+      text-align: center;
+      border: 1px solid $textColor;
+      border-radius: 8px;
+      color: $colorPurple;
+    }
+  }
+
+  .input-tags {
+    text-align: center;
+    margin-top: 10px;
+    padding-bottom: 10px;
+
+    h3 {
+      font-size: 1.1rem;
+      color: $colorPurple;
+      font-weight: 500;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      font-size: .9rem;
+    }
+
+  }
+
+}

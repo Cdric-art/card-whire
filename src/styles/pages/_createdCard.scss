@@ -65,102 +65,13 @@
 .body-card {
   padding: 30px;
 
-  .tags-aspiration {
+  .wrapper-tags {
     display: grid;
     grid-template-columns: 1fr 3fr;
     justify-items: center;
-    align-items: center;
-  }
-
-  .tags-list {
-    text-align: center;
-
-    li {
-      display: inline-block;
-      font-size: 1.1rem;
-      font-weight: 600;
-      border: 2px solid #fff1d8;
-      border-radius: 25px;
-      padding: 10px 35px;
-      margin: 5px;
-      background-color: #fff4e2;
-    }
-  }
-
-  .icon-tag img {
-    height: 50px;
-  }
-
-}
-
-.dashboard {
-
-  .input-file {
-    text-align: center;
-    margin-top: 12px;
-    padding-bottom: 20px;
-    width: 100%;
-    border-bottom: 1px solid $colorPurple;
-
-    label {
-      font-size: 1.1rem;
-      color: $colorPurple;
-      font-weight: 500;
-    }
-
-    input {
-      margin-top: 12px;
-      padding: 4px 8px;
-    }
-  }
-
-  .input-title {
-    display: grid;
-    grid-template-rows: repeat(3, 1fr);
-    justify-items: center;
-    align-items: center;
-    padding: 20px 0;
-    height: 210px;
-    border-bottom: 1px solid $colorPurple;
-
-    input {
-      width: 90%;
-      padding: 6px 0;
-      text-align: center;
-      border: 1px solid $textColor;
-      border-radius: 8px;
-      color: $colorPurple;
-    }
-  }
-
-  .input-tagsInspi {
-    text-align: center;
-    margin-top: 20px;
-    padding-bottom: 20px;
-
-    h3 {
-      font-size: 1.1rem;
-      color: $colorPurple;
-      font-weight: 500;
-    }
-
-    label {
-      display: block;
-      margin-top: 10px;
-    }
-
-    select {
-      width: 200px;
-      padding: 6px 0;
-      margin: 12px 22px 0 0;
-      border-radius: 8px;
-      border: 1px solid $colorPurple;
-    }
-
-    option {
-      font-size: .8rem;
-      font-weight: bold;
-    }
+    align-items: stretch;
+    min-height: 110px;
+    margin-bottom: 30px;
   }
 
 }

@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { SelectTagsAspi, SelectTagsAtout } from "../modules/SelectTagsAspi";
+import ListTags from "../modules/ListTags";
 
 const CreatedCard = () => {
 
@@ -6,12 +8,14 @@ const CreatedCard = () => {
     const [name, setName] = useState('Prénom NOM')
     const [job, setJob] = useState('Intitulé métier visé')
     const [hook, setHook] = useState('Phrase d\'accroche sur 1 ou 2 lignes')
-    const [tagsAspi, setTagsAspi] = useState([])
-    const arrTagsAspi = ['Tag Aspiration 1', "Tag Aspiration 2", "Tag Aspiration 3"]
 
+    const arrLabelTagsAspi = ["Tag aspiration 1", "Tag aspiration 2", "Tag aspiration 3"]
+    const [tagsAspi, setTagsAspi] = useState([])
+
+    const arrLabelTagsAtouts = ["Tag atout 1", "Tag atout 2", "Tag atout 3"]
+    const [tagsAtouts, setTagsAtouts] = useState([])
 
     return <div className="created-card">
-
         <div className="card">
             <img className="img-model" src="src/assets/images/modele.png" alt="Modele"/>
             <div className="wrapper-card">
@@ -25,18 +29,20 @@ const CreatedCard = () => {
                     <img className="logo" src="src/assets/images/Logo-whire.svg" alt="logo"/>
                 </div>
                 <div className="body-card">
-                    <div className="tags-aspiration">
+                    <div className="wrapper-tags">
                         <div className="icon-tag">
                             <img src="src/assets/icons/coeur.svg" alt="Coeur"/>
                         </div>
                         <div className="tags-list">
-                            <ul>
-                                {tagsAspi.length === 0 ? arrTagsAspi.map((tag, i) => (
-                                    <li key={i}>{tag}</li>
-                                )) : tagsAspi.map((tag, i) => (
-                                    <li key={i}>{tag}</li>
-                                ))}
-                            </ul>
+                            <ListTags label={arrLabelTagsAspi} tags={tagsAspi} style="yellow"/>
+                        </div>
+                    </div>
+                    <div className="wrapper-tags">
+                        <div className="icon-tag">
+                            <img src="src/assets/icons/star.svg" alt="Star"/>
+                        </div>
+                        <div className="tags-list">
+                            <ListTags label={arrLabelTagsAtouts} tags={tagsAtouts} style="green"/>
                         </div>
                     </div>
                 </div>
@@ -54,21 +60,17 @@ const CreatedCard = () => {
                 <input type="text" onChange={(e) => setJob(e.target.value)} value={job}/>
                 <input type="text" onChange={(e) => setHook(e.target.value)} value={hook}/>
             </div>
-            <div className="input-tagsInspi">
+            <div className="input-tags">
                 <h3>Tags Aspirations</h3>
                 <label htmlFor="tagsAspi">👉 Je choisis dans la liste suivante les tags “Aspirations”</label>
-                <select name="tagsAspi" onChange={(e) => setTagsAspi([...tagsAspi, e.target.value])}>
-                    <option/>
-                    <option value="tag1">Tag 1</option>
-                    <option value="tag2">Tag 2</option>
-                    <option value="tag3">Tag 3</option>
-                    <option value="tag4">Tag 4</option>
-                    <option value="tag5">Tag 5</option>
-                </select>
-                <button disabled={tagsAspi.length === 0} onClick={() => setTagsAspi([])}>Clear</button>
+                <SelectTagsAspi change={(e) => setTagsAspi(e)}/>
+            </div>
+            <div className="input-tags">
+                <h3>Tags Atouts</h3>
+                <label htmlFor="tagsAspi">👉 J'ajoute d’autres tags pour mettre en avant mes atouts principaux (compétences, qualités, outils maîtrisés, type de publics avec lesquelles je veux travailler…).</label>
+                <SelectTagsAtout change={(e) => setTagsAtouts(e)}/>
             </div>
         </div>
-
     </div>
 };
 
