@@ -96,7 +96,7 @@ const CreatedCard = () => {
                 <input type="text" onChange={(e) => setUrl(e.target.value)} value={url}/>
             </div>
             <div className="print">
-                <button>Télécharger / Imprimer</button>
+                <button onClick={() => window.print()}>Télécharger / Imprimer</button>
             </div>
         </div>
     </div>
