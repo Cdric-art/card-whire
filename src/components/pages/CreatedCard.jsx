@@ -15,7 +15,9 @@ const CreatedCard = () => {
     const arrLabelTagsAtouts = ["Tag atout 1", "Tag atout 2", "Tag atout 3"]
     const [tagsAtouts, setTagsAtouts] = useState([])
 
-    const [url, setUrl] = useState('')
+    const [url, setUrl] = useState('Url de ma page Whire')
+    const [themeTagsAspi, setThemeTagsAspi] = useState('yellow')
+    const [themeTagsAtouts, setThemeTagsAtouts] = useState('yellow')
 
     return <div className="created-card">
         <div className="card">
@@ -36,7 +38,7 @@ const CreatedCard = () => {
                             <img src="src/assets/icons/coeur.svg" alt="Coeur"/>
                         </div>
                         <div className="tags-list">
-                            <ListTags label={arrLabelTagsAspi} tags={tagsAspi} style="yellow"/>
+                            <ListTags label={arrLabelTagsAspi} tags={tagsAspi} style={themeTagsAspi}/>
                         </div>
                     </div>
                     <div className="wrapper-tags">
@@ -44,7 +46,7 @@ const CreatedCard = () => {
                             <img src="src/assets/icons/star.svg" alt="Star"/>
                         </div>
                         <div className="tags-list">
-                            <ListTags label={arrLabelTagsAtouts} tags={tagsAtouts} style="green"/>
+                            <ListTags label={arrLabelTagsAtouts} tags={tagsAtouts} style={themeTagsAtouts}/>
                         </div>
                     </div>
                 </div>
@@ -70,11 +72,31 @@ const CreatedCard = () => {
                 <h3>Tags Aspirations</h3>
                 <label htmlFor="tagsAspi">👉 Je choisis dans la liste suivante les tags “Aspirations”</label>
                 <SelectTagsAspi change={(e) => setTagsAspi(e)}/>
+                <div className="theme">
+                    <span onClick={() => setThemeTagsAspi('yellow')} className="yellow"/>
+                    <span onClick={() => setThemeTagsAspi('green')} className="green"/>
+                    <span onClick={() => setThemeTagsAspi('blue')} className="blue"/>
+                    <span onClick={() => setThemeTagsAspi('red')} className="red"/>
+                    <span onClick={() => setThemeTagsAspi('purple')} className="purple"/>
+                </div>
             </div>
             <div className="input-tags">
                 <h3>Tags Atouts</h3>
                 <label htmlFor="tagsAspi">👉 J'ajoute d’autres tags pour mettre en avant mes atouts principaux (compétences, qualités, outils maîtrisés, type de publics avec lesquelles je veux travailler…).</label>
                 <SelectTagsAtout change={(e) => setTagsAtouts(e)}/>
+                <div className="theme">
+                    <span onClick={() => setThemeTagsAtouts('yellow')} className="yellow"/>
+                    <span onClick={() => setThemeTagsAtouts('green')} className="green"/>
+                    <span onClick={() => setThemeTagsAtouts('blue')} className="blue"/>
+                    <span onClick={() => setThemeTagsAtouts('red')} className="red"/>
+                    <span onClick={() => setThemeTagsAtouts('purple')} className="purple"/>
+                </div>
+            </div>
+            <div className="input-url">
+                <input type="text" onChange={(e) => setUrl(e.target.value)} value={url}/>
+            </div>
+            <div className="print">
+                <button>Télécharger / Imprimer</button>
             </div>
         </div>
     </div>
