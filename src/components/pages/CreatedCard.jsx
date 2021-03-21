@@ -15,6 +15,8 @@ const CreatedCard = () => {
     const arrLabelTagsAtouts = ["Tag atout 1", "Tag atout 2", "Tag atout 3"]
     const [tagsAtouts, setTagsAtouts] = useState([])
 
+    const [url, setUrl] = useState('')
+
     return <div className="created-card">
         <div className="card">
             <img className="img-model" src="src/assets/images/modele.png" alt="Modele"/>
@@ -45,6 +47,10 @@ const CreatedCard = () => {
                             <ListTags label={arrLabelTagsAtouts} tags={tagsAtouts} style="green"/>
                         </div>
                     </div>
+                </div>
+                <div className="footer-card">
+                    <p>Qui se cache derrière mon CV ?</p>
+                    <a href={url} target="_blank" rel="noopener">👉 Cliquer ici</a>
                 </div>
             </div>
         </div>

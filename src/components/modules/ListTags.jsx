@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const ListTags = ({ label, tags, style }) => {
     return <ul>
@@ -11,5 +12,11 @@ const ListTags = ({ label, tags, style }) => {
         }
     </ul>
 };
+
+ListTags.prototypes = {
+    label: PropTypes.array.isRequired,
+    tags: PropTypes.array.isRequired,
+    style: PropTypes.string.isRequired
+}
 
 export default ListTags;

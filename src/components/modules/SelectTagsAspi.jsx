@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
@@ -24,6 +25,10 @@ export const SelectTagsAspi = ({ change }) => {
     />;
 };
 
+SelectTagsAspi.proptypes = {
+    change: PropTypes.func.isRequired
+}
+
 
 const optionsTagsAtout = [
     { value: 'Atout1', label: 'Atout1' },
@@ -43,3 +48,7 @@ export const SelectTagsAtout = ({ change }) => {
         onChange={change}
     />;
 };
+
+SelectTagsAtout.proptypes = {
+    change: PropTypes.func.isRequired
+}
