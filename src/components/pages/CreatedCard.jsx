@@ -2,9 +2,15 @@ import React, { useState } from 'react';
 import { SelectTagsAspi, SelectTagsAtout } from "../modules/SelectTagsAspi";
 import ListTags from "../modules/ListTags";
 
+import card_model from '../../assets/images/modele.png'
+import logo_whire from '../../assets/images/Logo-whire.svg'
+import coeur from '../../assets/icons/coeur.svg'
+import star from '../../assets/icons/star.svg'
+import profile from '../../assets/icons/profile.png'
+
 const CreatedCard = () => {
 
-    const [img, setImg] = useState('src/assets/icons/profile.png')
+    const [img, setImg] = useState(profile)
     const [name, setName] = useState('Prénom NOM')
     const [job, setJob] = useState('Intitulé métier visé')
     const [hook, setHook] = useState('Phrase d\'accroche sur 1 ou 2 lignes')
@@ -16,12 +22,13 @@ const CreatedCard = () => {
     const [tagsAtouts, setTagsAtouts] = useState([])
 
     const [url, setUrl] = useState('Url de ma page Whire')
+
     const [themeTagsAspi, setThemeTagsAspi] = useState('yellow')
     const [themeTagsAtouts, setThemeTagsAtouts] = useState('yellow')
 
     return <div className="created-card">
         <div className="card">
-            <img className="img-model" src="src/assets/images/modele.png" alt="Modele"/>
+            <img className="img-model" src={card_model} alt="Modele"/>
             <div className="wrapper-card">
                 <div className="header-card">
                     <img className="photo-profil" src={img} alt=""/>
@@ -30,12 +37,12 @@ const CreatedCard = () => {
                         <p className="job"><span className="emoji"> 🚀  </span>{job}</p>
                         <p className="hook">{hook}<span className="emoji">😀</span></p>
                     </div>
-                    <img className="logo" src="src/assets/images/Logo-whire.svg" alt="logo"/>
+                    <img className="logo" src={logo_whire} alt="logo"/>
                 </div>
                 <div className="body-card">
                     <div className="wrapper-tags">
                         <div className="icon-tag">
-                            <img src="src/assets/icons/coeur.svg" alt="Coeur"/>
+                            <img src={coeur} alt="Coeur"/>
                         </div>
                         <div className="tags-list">
                             <ListTags label={arrLabelTagsAspi} tags={tagsAspi} style={themeTagsAspi}/>
@@ -43,7 +50,7 @@ const CreatedCard = () => {
                     </div>
                     <div className="wrapper-tags">
                         <div className="icon-tag">
-                            <img src="src/assets/icons/star.svg" alt="Star"/>
+                            <img src={star} alt="Star"/>
                         </div>
                         <div className="tags-list">
                             <ListTags label={arrLabelTagsAtouts} tags={tagsAtouts} style={themeTagsAtouts}/>

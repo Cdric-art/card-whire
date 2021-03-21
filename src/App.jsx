@@ -7,13 +7,15 @@ import {
 import CreatedCard from "./components/pages/CreatedCard";
 import Home from "./components/pages/Home";
 
+import logo from './assets/images/whireLetter.png'
+
 function App() {
     return (
         <div className="App">
             <Router>
                 <div className="header">
                     <Link to="/">
-                        <img src="src/assets/images/whireLetter.png" alt="Logo Whire"/>
+                        <img src={logo} alt="Logo Whire"/>
                     </Link>
                 </div>
                 <Switch>
