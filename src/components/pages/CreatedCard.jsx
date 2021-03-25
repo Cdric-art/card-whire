@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SelectTagsAspi, SelectTagsAtout } from "../modules/SelectTagsAspi";
+import { SelectTagsAspi, SelectTagsAtout } from "../modules/SelectTags";
 import ListTags from "../modules/ListTags";
 
 import card_model from '../../assets/images/modele.png'
@@ -21,10 +21,12 @@ const CreatedCard = () => {
     const arrLabelTagsAtouts = ["Tag atout 1", "Tag atout 2", "Tag atout 3"]
     const [tagsAtouts, setTagsAtouts] = useState([])
 
-    const [url, setUrl] = useState('Url de ma page Whire')
+    const [url, setUrl] = useState('https://www.whire.me/@MAPAGE')
 
     const [themeTagsAspi, setThemeTagsAspi] = useState('yellow')
     const [themeTagsAtouts, setThemeTagsAtouts] = useState('yellow')
+    const [sizeTagsAspi, setSizeTagsAspi] = useState(20)
+    const [sizeTagsAtout, setSizeTagsAtout] = useState(20)
 
     return <div className="created-card">
         <div className="card">
@@ -45,7 +47,7 @@ const CreatedCard = () => {
                             <img src={coeur} alt="Coeur"/>
                         </div>
                         <div className="tags-list">
-                            <ListTags label={arrLabelTagsAspi} tags={tagsAspi} style={themeTagsAspi}/>
+                            <ListTags label={arrLabelTagsAspi} tags={tagsAspi} style={themeTagsAspi} size={sizeTagsAspi}/>
                         </div>
                     </div>
                     <div className="wrapper-tags">
@@ -53,13 +55,13 @@ const CreatedCard = () => {
                             <img src={star} alt="Star"/>
                         </div>
                         <div className="tags-list">
-                            <ListTags label={arrLabelTagsAtouts} tags={tagsAtouts} style={themeTagsAtouts}/>
+                            <ListTags label={arrLabelTagsAtouts} tags={tagsAtouts} style={themeTagsAtouts} size={sizeTagsAtout}/>
                         </div>
                     </div>
                 </div>
                 <div className="footer-card">
                     <p>Qui se cache derrière mon CV ?</p>
-                    <a href={url} target="_blank" rel="noopener">👉 Cliquer ici</a>
+                    <a href={url} target="_blank" rel="noopener">👉 {url}</a>
                 </div>
             </div>
         </div>
@@ -80,11 +82,17 @@ const CreatedCard = () => {
                 <label htmlFor="tagsAspi">👉 Je choisis dans la liste suivante les tags “Aspirations”</label>
                 <SelectTagsAspi change={(e) => setTagsAspi(e)}/>
                 <div className="theme">
-                    <span onClick={() => setThemeTagsAspi('yellow')} className="yellow"/>
-                    <span onClick={() => setThemeTagsAspi('green')} className="green"/>
-                    <span onClick={() => setThemeTagsAspi('blue')} className="blue"/>
-                    <span onClick={() => setThemeTagsAspi('red')} className="red"/>
-                    <span onClick={() => setThemeTagsAspi('purple')} className="purple"/>
+                    <div className="colors">
+                        <span onClick={() => setThemeTagsAspi('yellow')} className="yellow"/>
+                        <span onClick={() => setThemeTagsAspi('green')} className="green"/>
+                        <span onClick={() => setThemeTagsAspi('blue')} className="blue"/>
+                        <span onClick={() => setThemeTagsAspi('red')} className="red"/>
+                        <span onClick={() => setThemeTagsAspi('purple')} className="purple"/>
+                    </div>
+                    <div className="size">
+                        <input type="number" min={4} max={30} value={sizeTagsAspi} onChange={(e) => setSizeTagsAspi(e.target.value)}/>
+                        <span>px</span>
+                    </div>
                 </div>
             </div>
             <div className="input-tags">
@@ -92,11 +100,17 @@ const CreatedCard = () => {
                 <label htmlFor="tagsAspi">👉 J'ajoute d’autres tags pour mettre en avant mes atouts principaux (compétences, qualités, outils maîtrisés, type de publics avec lesquelles je veux travailler…).</label>
                 <SelectTagsAtout change={(e) => setTagsAtouts(e)}/>
                 <div className="theme">
-                    <span onClick={() => setThemeTagsAtouts('yellow')} className="yellow"/>
-                    <span onClick={() => setThemeTagsAtouts('green')} className="green"/>
-                    <span onClick={() => setThemeTagsAtouts('blue')} className="blue"/>
-                    <span onClick={() => setThemeTagsAtouts('red')} className="red"/>
-                    <span onClick={() => setThemeTagsAtouts('purple')} className="purple"/>
+                    <div className="colors">
+                        <span onClick={() => setThemeTagsAtouts('yellow')} className="yellow"/>
+                        <span onClick={() => setThemeTagsAtouts('green')} className="green"/>
+                        <span onClick={() => setThemeTagsAtouts('blue')} className="blue"/>
+                        <span onClick={() => setThemeTagsAtouts('red')} className="red"/>
+                        <span onClick={() => setThemeTagsAtouts('purple')} className="purple"/>
+                    </div>
+                    <div className="size">
+                        <input type="number" min={4} max={30} value={sizeTagsAtout} onChange={(e) => setSizeTagsAtout(e.target.value)}/>
+                        <span>px</span>
+                    </div>
                 </div>
             </div>
             <div className="input-url">

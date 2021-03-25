@@ -59,38 +59,58 @@
     }
 
     .theme {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
       width: 100%;
-      height: 20px;
+      height: 40px;
       text-align: center;
 
-      span {
-        display: inline-block;
-        height: 18px;
-        width: 18px;
-        border-radius: 2px;
-        margin: 10px 5px 5px 5px;
-        cursor: pointer;
-      }
+      .colors {
+        span {
+          display: inline-block;
+          height: 18px;
+          width: 18px;
+          border-radius: 2px;
+          margin: 10px 5px 5px 5px;
+          cursor: pointer;
+        }
 
-      .yellow {
-        background-color: #fff4e2;
-        border: 2px solid #fff1d8;
+        .yellow {
+          background-color: #fff4e2;
+          border: 2px solid #fff1d8;
+        }
+        .green {
+          background-color: #e0ffdb;
+          border: 2px solid #cbffce;
+        }
+        .blue {
+          background-color: #e2eeff;
+          border: 2px solid #c8d9ff;
+        }
+        .red {
+          background-color: #ffe2e2;
+          border: 2px solid #ffc8c8;
+        }
+        .purple {
+          background-color: #f1e2ff;
+          border: 2px solid #d7c8ff;
+        }
       }
-      .green {
-        background-color: #e0ffdb;
-        border: 2px solid #cbffce;
-      }
-      .blue {
-        background-color: #e2eeff;
-        border: 2px solid #c8d9ff;
-      }
-      .red {
-        background-color: #ffe2e2;
-        border: 2px solid #ffc8c8;
-      }
-      .purple {
-        background-color: #f1e2ff;
-        border: 2px solid #d7c8ff;
+      .size {
+        input {
+          width: 50px;
+          padding: 2px;
+          text-align: center;
+          border: 1px solid rgba(0, 0, 0, 0.2);
+          border-radius: 3px;
+          color: $colorPurple;
+          outline: none;
+        }
+        span {
+          font-size: .9rem;
+          color: $colorPurple;
+        }
       }
     }
 
@@ -118,7 +138,7 @@
     text-align: center;
 
     button {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       font-weight: 500;
       color: $bgLight;
       padding: 6px 10px;
