@@ -80,7 +80,7 @@ const CreatedCard = () => {
             <div className="input-tags">
                 <h3>Tags Aspirations</h3>
                 <label htmlFor="tagsAspi">👉 Je choisis dans la liste suivante les tags “Aspirations”</label>
-                <SelectTagsAspi change={(e) => setTagsAspi(e)}/>
+                <SelectTagsAspi change={(value) => setTagsAspi(value)}/>
                 <div className="theme">
                     <div className="colors">
                         <span onClick={() => setThemeTagsAspi('yellow')} className="yellow"/>
@@ -98,7 +98,7 @@ const CreatedCard = () => {
             <div className="input-tags">
                 <h3>Tags Atouts</h3>
                 <label htmlFor="tagsAspi">👉 J'ajoute d’autres tags pour mettre en avant mes atouts principaux (compétences, qualités, outils maîtrisés, type de publics avec lesquelles je veux travailler…).</label>
-                <SelectTagsAtout change={(e) => setTagsAtouts(e)}/>
+                <SelectTagsAtout change={(value) => setTagsAtouts(value)} />
                 <div className="theme">
                     <div className="colors">
                         <span onClick={() => setThemeTagsAtouts('yellow')} className="yellow"/>
